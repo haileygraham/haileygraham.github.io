@@ -1,37 +1,224 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Hailey Graham</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hailey Graham</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
+      background: #111827;
+      position: sticky;
+      top: 0;
+    }
+
+    nav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #a41e35;
+    }
+
+    header {
+      text-align: center;
+      padding: 90px 20px 70px;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+    }
+
+    header h2 {
+      color: #a41e35;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      max-width: 750px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #cbd5e1;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+
+    h2 {
+      color: #ffffff;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 25px;
+      border-radius: 14px;
+      margin-bottom: 20px;
+      border: 1px solid #334155;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #f8fafc;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      background: #334155;
+      color: #e5e7eb;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .button {
+      background: #a41e35;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background: #c0263f;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #111827;
+      color: #94a3b8;
+    }
+  </style>
 </head>
+
 <body>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#organizations">Organizations</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
+  <header>
     <h1>Hailey Graham</h1>
-
     <h2>Electrical & Computer Engineering Student</h2>
-
     <p>
-        Welcome to my personal website.
+      I am an Electrical & Computer Engineering student at Temple University with
+      interests in embedded systems, firmware, digital design, computer hardware,
+      and software development.
     </p>
+    <div class="buttons">
+      <a class="button" href="https://github.com/haileygraham" target="_blank">GitHub</a>
+      <a class="button" href="YOUR_LINKEDIN_URL" target="_blank">LinkedIn</a>
+    </div>
+  </header>
 
-    <p>
-        I am an Electrical & Computer Engineering student at Temple University
-        interested in embedded systems, firmware, digital design, computer
-        hardware, and software development.
-    </p>
+  <section id="about">
+    <h2>About</h2>
+    <div class="card">
+      <p>
+        I am currently developing my technical skills through coursework, projects,
+        IEEE involvement, and hands-on learning experiences. My interests center on
+        the intersection of hardware and software, especially embedded systems,
+        firmware, and digital hardware.
+      </p>
+    </div>
 
+    <div class="tags">
+      <span class="tag">Embedded Systems</span>
+      <span class="tag">Firmware</span>
+      <span class="tag">Digital Design</span>
+      <span class="tag">Computer Hardware</span>
+      <span class="tag">Software Development</span>
+      <span class="tag">Signal Processing</span>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="card">
+      <h3>Personal Website</h3>
+      <p>
+        Built and hosted a personal portfolio website using HTML, CSS, GitHub Pages,
+        and a custom domain.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>GitHub Profile</h3>
+      <p>
+        Created a professional GitHub profile to document engineering coursework,
+        technical projects, and growth throughout my ECE education.
+      </p>
+    </div>
+  </section>
+
+  <section id="organizations">
     <h2>Organizations</h2>
 
-    <ul>
-        <li>IEEE Student Member</li>
-        <li>IEEE Women in Engineering (WIE)</li>
-    </ul>
+    <div class="card">
+      <h3>IEEE Student Member</h3>
+      <p>
+        Member of the Institute of Electrical and Electronics Engineers.
+      </p>
+    </div>
 
-    <h2>Links</h2>
+    <div class="card">
+      <h3>IEEE Women in Engineering</h3>
+      <p>
+        Member of IEEE Women in Engineering, a global network supporting women in
+        technical fields.
+      </p>
+    </div>
+  </section>
 
-    <ul>
-        <li><a href="https://github.com/haileygraham">GitHub</a></li>
-        <li><a href="YOUR_LINKEDIN_URL">LinkedIn</a></li>
-    </ul>
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+      <p>Connect with me through GitHub or LinkedIn.</p>
+      <div class="buttons">
+        <a class="button" href="https://github.com/haileygraham" target="_blank">GitHub</a>
+        <a class="button" href="YOUR_LINKEDIN_URL" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </section>
 
+  <footer>
+    <p>© 2026 Hailey Graham</p>
+  </footer>
 </body>
 </html>
