@@ -4,216 +4,393 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hailey Graham</title>
+
   <style>
-    body {
+    :root {
+      --red: #a41e35;
+      --dark: #111827;
+      --text: #374151;
+      --light: #f9fafb;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--dark);
+      background: white;
       line-height: 1.6;
     }
 
     nav {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 20px;
-      background: #111827;
       position: sticky;
       top: 0;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      z-index: 10;
     }
 
-    nav a {
-      color: #e5e7eb;
+    .nav-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-links a {
       text-decoration: none;
-      font-weight: bold;
+      color: var(--dark);
+      font-weight: 600;
+      font-size: 0.95rem;
     }
 
-    nav a:hover {
-      color: #a41e35;
+    .nav-links a:hover {
+      color: var(--red);
     }
 
     header {
-      text-align: center;
-      padding: 90px 20px 70px;
+      max-width: 1100px;
+      margin: auto;
+      padding: 90px 24px 70px;
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr;
+      gap: 50px;
+      align-items: center;
     }
 
-    header h1 {
-      font-size: 3.5rem;
-      margin-bottom: 10px;
-    }
-
-    header h2 {
-      color: #a41e35;
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-    }
-
-    header p {
-      max-width: 750px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      color: #cbd5e1;
-    }
-
-    section {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 50px 20px;
-    }
-
-    h2 {
-      color: #ffffff;
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
-    .card {
-      background: #1e293b;
-      padding: 25px;
-      border-radius: 14px;
-      margin-bottom: 20px;
-      border: 1px solid #334155;
-    }
-
-    .card h3 {
-      margin-top: 0;
-      color: #f8fafc;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .tag {
-      background: #334155;
-      color: #e5e7eb;
-      padding: 8px 12px;
+    .badge {
+      display: inline-block;
+      background: #fce7ea;
+      color: var(--red);
+      padding: 8px 14px;
       border-radius: 999px;
+      font-weight: 700;
       font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      line-height: 1;
+      margin-bottom: 20px;
+      letter-spacing: -2px;
+    }
+
+    .subtitle {
+      font-size: 1.35rem;
+      color: var(--text);
+      margin-bottom: 24px;
+      max-width: 720px;
     }
 
     .buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 20px;
+      gap: 14px;
+      margin-top: 28px;
     }
 
     .button {
-      background: #a41e35;
-      color: white;
-      padding: 12px 18px;
-      border-radius: 8px;
       text-decoration: none;
-      font-weight: bold;
+      padding: 13px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 2px solid var(--red);
+      color: var(--red);
+    }
+
+    .button.primary {
+      background: var(--red);
+      color: white;
     }
 
     .button:hover {
-      background: #c0263f;
+      transform: translateY(-2px);
+      transition: 0.2s ease;
+    }
+
+    .photo-card {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 22px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(17, 24, 39, 0.08);
+    }
+
+    .photo-card img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 24px;
+      display: block;
+      margin: auto;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 70px 24px;
+    }
+
+    .section-title {
+      font-size: 2.3rem;
+      margin-bottom: 12px;
+      letter-spacing: -1px;
+    }
+
+    .section-intro {
+      color: var(--text);
+      max-width: 760px;
+      margin-bottom: 34px;
+      font-size: 1.05rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: 0 12px 40px rgba(17, 24, 39, 0.05);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: var(--dark);
+    }
+
+    .card p {
+      color: var(--text);
+    }
+
+    .highlight {
+      background: var(--light);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      background: var(--light);
+      border: 1px solid var(--border);
+      padding: 10px 15px;
+      border-radius: 999px;
+      font-weight: 600;
+      color: var(--text);
     }
 
     footer {
       text-align: center;
-      padding: 30px;
-      background: #111827;
-      color: #94a3b8;
+      padding: 35px 24px;
+      border-top: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    @media (max-width: 800px) {
+      header {
+        grid-template-columns: 1fr;
+        text-align: left;
+        padding-top: 60px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
     }
   </style>
 </head>
 
 <body>
   <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#organizations">Organizations</a>
-    <a href="#contact">Contact</a>
+    <div class="nav-inner">
+      <div class="logo">Hailey Graham</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#organizations">Organizations</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
   </nav>
 
   <header>
-    <h1>Hailey Graham</h1>
-    <h2>Electrical & Computer Engineering Student</h2>
-    <p>
-      I am an Electrical & Computer Engineering student at Temple University with
-      interests in embedded systems, firmware, digital design, computer hardware,
-      and software development.
-    </p>
-    <div class="buttons">
-      <a class="button" href="https://github.com/haileygraham" target="_blank">GitHub</a>
-      <a class="button" href="YOUR_LINKEDIN_URL" target="_blank">LinkedIn</a>
+    <div>
+      <span class="badge">Temple University ECE</span>
+      <h1>Hailey Graham</h1>
+      <p class="subtitle">
+        Computer Engineering student at Temple University interested in hardware,
+        software, and the technologies that connect them.
+      </p>
+
+      <div class="buttons">
+        <a class="button primary" href="https://github.com/haileygraham" target="_blank">GitHub</a>
+        <a class="button" href="YOUR_LINKEDIN_URL" target="_blank">LinkedIn</a>
+        <a class="button" href="#projects">Projects</a>
+      </div>
+    </div>
+
+    <div class="photo-card">
+      <img src="headshot.jpg" alt="Hailey Graham headshot" />
     </div>
   </header>
 
-  <section id="about">
-    <h2>About</h2>
-    <div class="card">
-      <p>
-        I am currently developing my technical skills through coursework, projects,
-        IEEE involvement, and hands-on learning experiences. My interests center on
-        the intersection of hardware and software, especially embedded systems,
-        firmware, and digital hardware.
-      </p>
-    </div>
+  <section id="about" class="highlight">
+    <h2 class="section-title">About Me</h2>
+    <p class="section-intro">
+      I am pursuing a Bachelor of Science in Electrical and Computer Engineering
+      with a concentration in Computer Engineering at Temple University. I am
+      building a strong foundation in engineering, problem solving, and technology
+      through coursework, professional development, IEEE involvement, and hands-on
+      learning experiences.
+    </p>
 
-    <div class="tags">
-      <span class="tag">Embedded Systems</span>
-      <span class="tag">Firmware</span>
-      <span class="tag">Digital Design</span>
-      <span class="tag">Computer Hardware</span>
-      <span class="tag">Software Development</span>
-      <span class="tag">Signal Processing</span>
+    <div class="grid">
+      <div class="card">
+        <h3>Computer Engineering</h3>
+        <p>Studying the interaction between computer hardware, software, and digital systems.</p>
+      </div>
+
+      <div class="card">
+        <h3>Hardware & Software</h3>
+        <p>Interested in how physical systems and code work together to solve real problems.</p>
+      </div>
+
+      <div class="card">
+        <h3>Professional Growth</h3>
+        <p>Developing technical and communication skills through projects, organizations, and coursework.</p>
+      </div>
     </div>
   </section>
 
   <section id="projects">
-    <h2>Projects</h2>
+    <h2 class="section-title">Projects</h2>
+    <p class="section-intro">
+      A growing collection of technical work, coursework, and professional development projects.
+    </p>
 
-    <div class="card">
-      <h3>Personal Website</h3>
-      <p>
-        Built and hosted a personal portfolio website using HTML, CSS, GitHub Pages,
-        and a custom domain.
-      </p>
+    <div class="grid">
+      <div class="card">
+        <h3>Personal Website</h3>
+        <p>
+          Personal portfolio website built to showcase academic progress,
+          organizations, projects, and professional development.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>GitHub Portfolio</h3>
+        <p>
+          Professional GitHub profile used to document coursework, technical
+          exploration, and future engineering projects.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Future Technical Projects</h3>
+        <p>
+          Additional engineering and programming projects will be added as I
+          progress through my degree.
+        </p>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>GitHub Profile</h3>
-      <p>
-        Created a professional GitHub profile to document engineering coursework,
-        technical projects, and growth throughout my ECE education.
-      </p>
+  <section id="skills" class="highlight">
+    <h2 class="section-title">Skills & Tools</h2>
+    <p class="section-intro">
+      Skills I am currently building through coursework, projects, and professional development.
+    </p>
+
+    <div class="skills">
+      <span class="skill">Problem Solving</span>
+      <span class="skill">Technical Communication</span>
+      <span class="skill">Research & Analysis</span>
+      <span class="skill">HTML</span>
+      <span class="skill">CSS</span>
+      <span class="skill">GitHub</span>
+      <span class="skill">Microsoft Excel</span>
+      <span class="skill">Team Collaboration</span>
     </div>
   </section>
 
   <section id="organizations">
-    <h2>Organizations</h2>
+    <h2 class="section-title">Organizations</h2>
+    <p class="section-intro">
+      Professional organizations supporting my growth in engineering and technology.
+    </p>
 
-    <div class="card">
-      <h3>IEEE Student Member</h3>
-      <p>
-        Member of the Institute of Electrical and Electronics Engineers.
-      </p>
-    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>IEEE Student Member</h3>
+        <p>
+          Member of the Institute of Electrical and Electronics Engineers.
+        </p>
+      </div>
 
-    <div class="card">
-      <h3>IEEE Women in Engineering</h3>
-      <p>
-        Member of IEEE Women in Engineering, a global network supporting women in
-        technical fields.
-      </p>
+      <div class="card">
+        <h3>IEEE Women in Engineering</h3>
+        <p>
+          Member of IEEE Women in Engineering, a global community supporting women
+          in engineering and technology.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Temple University</h3>
+        <p>
+          Bachelor of Science in Electrical & Computer Engineering, Computer
+          Engineering Concentration. Expected graduation: May 2029.
+        </p>
+      </div>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="card">
-      <p>Connect with me through GitHub or LinkedIn.</p>
-      <div class="buttons">
-        <a class="button" href="https://github.com/haileygraham" target="_blank">GitHub</a>
-        <a class="button" href="https://www.linkedin.com/in/hailey-graham-95b873383/?skipRedirect=true" target="_blank">LinkedIn</a>
-      </div>
+  <section id="contact" class="highlight">
+    <h2 class="section-title">Contact</h2>
+    <p class="section-intro">
+      Feel free to connect with me through GitHub or LinkedIn.
+    </p>
+
+    <div class="buttons">
+      <a class="button primary" href="https://github.com/haileygraham" target="_blank">GitHub</a>
+      <a class="button" href="YOUR_LINKEDIN_URL" target="_blank">LinkedIn</a>
     </div>
   </section>
 
