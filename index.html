@@ -122,10 +122,14 @@
       color: white;
     }
 
-    .button:hover {
-      transform: translateY(-2px);
-      transition: 0.2s ease;
-    }
+    .button {
+    transition: all 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
 
     .photo-card {
       background: var(--light);
@@ -255,8 +259,8 @@
       <span class="badge">Temple University ECE</span>
       <h1>Hailey Graham</h1>
       <p class="subtitle">
-        Electrical and Computer Engineering student at Temple University interested in hardware,
-        software, and the technologies that connect them.
+        Electrical and Computer Engineering student at Temple University interested in embedded systems,
+        digital design, and the intersection of hardware and software.
       </p>
 
       <div class="buttons">
